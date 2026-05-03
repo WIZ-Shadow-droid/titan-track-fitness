@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import AuthPage from './components/AuthPage';
+import Dashboard from './components/Dashboard';
+import VideoBackground from './components/VideoBackground';
 import './App.css';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState('Athlete');
+
+  const handleLogin = (email) => {
+    const name = email.split('@')[0] || 'Athlete';
+    setUserName(name.charAt(0).toUpperCase() + name.slice(1));
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {!isLoggedIn ? (
+        <>
+          <VideoBackground type="login" />
+          <AuthPage onLogin={handleLogin} />
+        </>
+      ) : (
+        <>
+          <VideoBackground type="dashboard" />
+          <Dashboard userName={userName} onLogout={handleLogout} />
+        </>
+      )}
     </div>
   );
 }
