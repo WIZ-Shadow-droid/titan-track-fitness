@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/titan-track-fitness/static/css/main.382892c7.css",
+    "main.css": "/titan-track-fitness/static/css/main.46d1fb6a.css",
     "main.js": "/titan-track-fitness/static/js/main.c01255a3.js",
     "index.html": "/titan-track-fitness/index.html",
-    "main.382892c7.css.map": "/titan-track-fitness/static/css/main.382892c7.css.map",
+    "main.46d1fb6a.css.map": "/titan-track-fitness/static/css/main.46d1fb6a.css.map",
     "main.c01255a3.js.map": "/titan-track-fitness/static/js/main.c01255a3.js.map"
   },
   "entrypoints": [
-    "static/css/main.382892c7.css",
+    "static/css/main.46d1fb6a.css",
     "static/js/main.c01255a3.js"
   ]
 }
